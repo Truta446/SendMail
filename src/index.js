@@ -3,29 +3,26 @@ const fs = require('fs')
 const path = require('path')
 const nodemailer = require('nodemailer')
 const readlineSync = require('readline-sync')
+require('dotenv').config()
 const templateMail = fs.readFileSync(
   path.join(__dirname, '..', 'templates', '1', 'beeFree.html'),
   'utf8'
 )
 
 function main() {
-  const user = readlineSync.question('E-mail: ')
-  const password = readlineSync.question('Password: ', {
-    hideEchoBack: true
-  })
   const dest = readlineSync.question('Destination: ')
   const title = readlineSync.question('Title: ')
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: user,
-      pass: password
+      user: process.env.USER_MAIL,
+      pass: process.env.PASSWORD_MAIL
     }
   })
 
   const mailOptions = {
-    from: user,
+    from: process.env.USER_MAIL,
     to: dest,
     subject: title,
     html: templateMail
