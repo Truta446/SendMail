@@ -23,8 +23,8 @@ function main() {
 
   const mailOptions = {
     from: process.env.USER_MAIL,
-    to: dest,
-    subject: title,
+    to: dest === '' ? process.env.TEST_MAIL : dest,
+    subject: title === '' ? process.env.TEST_MESSAGE : title,
     html: templateMail
   }
 
