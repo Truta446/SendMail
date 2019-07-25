@@ -28,9 +28,34 @@ function main() {
     html: templateMail,
     attachments: [
       {
+        filename: 'logo_re_ani.gif',
+        path: './templates/1/images/logo_re_ani.gif',
+        cid: 'logoGif'
+      },
+      {
         filename: 'Hero_bg.jpg',
         path: './templates/1/images/Hero_bg.jpg',
         cid: 'cellphone'
+      },
+      {
+        filename: '1.png',
+        path: './templates/1/images/1.png',
+        cid: 'firstImg'
+      },
+      {
+        filename: '2.png',
+        path: './templates/1/images/2.png',
+        cid: 'secondImg'
+      },
+      {
+        filename: '3.png',
+        path: './templates/1/images/3.png',
+        cid: 'thirdImg'
+      },
+      {
+        filename: 'logo.png',
+        path: './templates/1/images/logo.png',
+        cid: 'logo'
       },
       {
         filename: 'facebook@2x.png',
