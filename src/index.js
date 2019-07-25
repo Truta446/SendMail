@@ -3,7 +3,6 @@ const fs = require('fs')
 const path = require('path')
 const nodemailer = require('nodemailer')
 const readlineSync = require('readline-sync')
-const hogan = require('hogan.js')
 const templateMail = fs.readFileSync(
   path.join(__dirname, '..', 'templates', '1', 'beeFree.html'),
   'utf8'
@@ -29,7 +28,7 @@ function main() {
     from: user,
     to: dest,
     subject: title,
-    html: hogan.compile(templateMail)
+    html: templateMail
   }
 
   transporter.sendMail(mailOptions, (error, info) => {
