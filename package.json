@@ -6,7 +6,7 @@
   "author": "Juan V. Lopes",
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.3.0",
     "hogan.js": "^3.0.2",
     "nodemailer": "^6.3.0",
     "nodemailer-html-to-text": "^3.0.0",
